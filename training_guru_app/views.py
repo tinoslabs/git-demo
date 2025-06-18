@@ -23,12 +23,12 @@ def index(request):
     random.shuffle(trainers)
     return render(request, 'index.html',{'clients_reviews': clients_reviews, 'client_logo':client_logo,'blogs': blogs[:3],'trainers':trainers[:4]})
 
-def aboutus(request):
-    clients_reviews = ClientReview.objects.all()
-    client_logo = Client_Logo.objects.all()
-    trainers = list(Trainer.objects.all())
-    random.shuffle(trainers)
-    return render(request, 'about-us.html',{'clients_reviews': clients_reviews,'client_logo':client_logo,'trainers':trainers[:4]})
+# def aboutus(request):
+#     clients_reviews = ClientReview.objects.all()
+#     client_logo = Client_Logo.objects.all()
+#     trainers = list(Trainer.objects.all())
+#     random.shuffle(trainers)
+#     return render(request, 'about-us.html',{'clients_reviews': clients_reviews,'client_logo':client_logo,'trainers':trainers[:4]})
 
 def training(request):
     client_logo = Client_Logo.objects.all()
