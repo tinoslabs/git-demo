@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!--
+=============================================
+    Theme Inner Banner
+==============================================
+-->
+<div class="inner-banner" style="background:url({% static 'images/inner-page/banner-5o.jpg' %}) no-repeat center;background-size:cover;">
+    <div class="opacity">
+        <div class="container">
+            <h3>Blog</h3>
+        </div> <!-- /.container -->
+    </div> <!-- /.opacity -->
+</div> <!-- /.inner-banner -->
+
+<!--
+=============================================
+    Our Blog
+==============================================
+-->
+<div class="recent-news">
+    <div class="container">
+        <!-- <div class="theme-title">
+            <h2>News</h2>
+            <p>All the latest news about our company. Fresh and new everyday, every hour.</p>
+        </div>  -->
+<div class="row">
+    {% for blog in blogs %}
+    <div class="col-md-4 col-sm-6">
+        <div class="single-news" style="height: 350px; margin-bottom: 150px;">
+            {% if blog.image %}
+            <img src="{{ blog.image.url }}" alt="{{ blog.name }}" style="height: 350px; object-fit: cover;">
+            {% endif %}
+            <div class="text">
+                <h6><a href="{% url 'blog_details' blog.id %}" class="tran3s">{{ blog.name }}</a></h6>
+                <span>{{ blog.created_date|date:"F d, Y" }}</span>
+                <!-- <p>{{ blog.description|safe }}</p> -->
+            </div> <!-- /.text -->
+        </div> <!-- /.single-news -->
+    </div> <!-- /.col- -->
+    {% endfor %}
+</div> <!-- /.row -->
+
+    </div> <!-- /.container -->
+</div> <!-- /.recent-news -->
+
+
+            
+            </div> <!-- /.blog-sidebar -->
+        </div> <!-- /.bizcoach-row -->
+    </div> <!-- /.container -->
+</div> <!-- /.our-blog -->
+<style>
+    .recent-news h6 a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis at the end */
+    white-space: normal; /* Allow breaking to next line */
+    height: 3em; /* Adjust based on font-size to control the height of two lines */
+    line-height: 1.5em; /* Adjust line height based on design */
+}
+
+</style>
+{% endblock %}

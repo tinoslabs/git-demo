@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<!--
+=============================================
+    Theme Inner Banner
+==============================================
+-->
+<div class="inner-banner" style="background:url({% static 'images/home/s111.jpg' %}) no-repeat center;background-size:cover;">
+    <div class="opacity">
+        <div class="container">
+            <h3>EMPLOYEE PERFORMANCE COUNSELLING</h3>
+        </div> <!-- /.container -->
+    </div> <!-- /.opacity -->
+</div> <!-- /.inner-banner -->
+
+<!--
+=============================================
+    Service Details
+==============================================
+-->
+<div class="service-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h4>EMPLOYEE PERFORMANCE COUNSELLING</h4>
+                <p class="m1">
+                    Our employee performance counselling modules are designed to develop job-related skills and enhance the career development of employees in an organization. From an organizational point of view, these modules help to attract and retain the best talent, as well as increase the quality of the workforce. The need for a stress-free, motivated, and capable workforce is highly essential to achieve constant business success, and it is here that our Employee Performance Counselling modules help organizations to realize this need.
+                </p>
+                <p class="m1">
+                    These counselling sessions focus on improving employee performance through various techniques and strategies tailored to individual needs. Our experts provide guidance on setting achievable goals, managing stress, and improving work-life balance.
+                </p>
+                <h5 id="counsellingtools">The various counselling tools employed by us are as follows:</h5>
+                <ul>
+                    <li>One-on-One Counselling Sessions</li>
+                    <li>Group Workshops</li>
+                    <li>Performance Feedback Mechanisms</li>
+                    <li>Stress Management Techniques</li>
+                    <li>Career Development Plans</li>
+                    <li>Motivational Training</li>
+                    <li>Conflict Resolution Strategies</li>
+                </ul>
+            </div> <!-- /.col-md-8 -->
+
+            <div class="col-md-4">
+                <div class="sidebar-list-item">
+                    <ul>
+                        <li><a href="" class="tran3s">COUNSELLING</a></li>
+                        <li><a href="#counsellingtools" class="tran3s">COUNSELLING TOOLS</a></li>
+                        <li><a href="#ourclients" class="tran3s">OUR CLIENTS</a></li>
+                    </ul>
+                </div> <!-- /.sidebar-list-item -->
+            </div> <!-- /.col-md-4 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.service-details -->
+
+<br><br>
+
+
+
+
+			<!--
+			=============================================
+				Partner Logo
+			==============================================
+			-->
+			<div class="partner-section" id="ourclients">
+				<div class="opacity">
+					<div class="container">
+						<div class="theme-title">
+							<h2>Our Clients</h2>
+							<p>We take pride in our clients who speak for us. We love them a lot. We are Awesome at what we do.</p>
+						</div> <!-- /.theme-title -->
+
+                        <div id="partenr-logo">{% for logos in client_logo %}
+							<div class="item"><img src="{{logos.logo.url}}" alt=""></div>
+							{% endfor %}
+					</div> <!-- /.container -->
+				</div> <!-- /.opacity -->
+			</div> <!-- /.partner-section -->
+			
+            <style>
+                .service-details {
+    padding: 50px 0;
+ 
+}
+
+.service-details h4 {
+    color: #69c0a6;
+    margin-bottom: 20px;
+}
+
+.service-details h5 {
+    color: #69c0a6;
+    margin-bottom: 15px;
+}
+
+.service-details p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.service-details ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-list-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-list-item ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-list-item ul li a {
+    color: #69c0a6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar-list-item ul li a:hover {
+    /* color: #333; */
+}
+
+            </style>
+			{% endblock %}
